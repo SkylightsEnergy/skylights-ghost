@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!-- favicon --}}
+    <link rel="shortcut icon" href="{{asset "images/logo/faivon.jpeg"}}" />
+    <title>Skylights Energy Dev</title>
+    {{!-- boostrap css --}}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    {{!-- <!-- icons --> --}}
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.9.55/css/materialdesignicons.min.css"
+        rel="stylesheet"
+        type="text/css"
+    />
+    {{!-- <!-- slick css --> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    {{!-- main css --}}
+    <link rel="stylesheet" href="{{asset "scss/style.css"}}" />
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    {{!-- navbar --}}
+    {{!-- <nav class="navbar navbar-expand-lg fixed-top sticky topbar-custom">
+            <div class="container">
+                <ul class="navbar-nav">
+                    <li>
+                        <a href="/">support@skylightsenergy.com</a>
+                    </li>
+                    <li>
+                        <a href="/">+91-9876543210</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li><a class="text-primary" href=""><i class="mdi mdi-facebook f-20"></i></a></li>
+                    <li><a class="text-primary" href=""><i class="mdi mdi-twitter f-20"></i></a></li>
+                    <li><a class="text-primary" href=""><i class="mdi mdi-instagram f-20"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg fixed-top sticky navbar-custom">
+            <div class="container">
+                <a class="navbar-brand logo" href="/">
+                    <img src="{{asset "images/logo/logo1.jpeg"}}" alt="logo" height="40" />
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span>Menu</span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="active"><a href="/">Solutions</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/post">Success Stories</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/testimonials">Testimonials</a></li>
+                        <li><a href="/">Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav> --}}
+    {{!-- end --}}
+    {{{body}}}
+    {{ghost_foot}}
+    {{!-- loading javascripts --}}
+    <script src="{{asset "js/jquery.min.js"}}"></script>
+    <script src="{{asset "js/jquery.easing.min.js"}}"></script>
+    <script src="{{asset "js/bootstrap.bundle.min.js"}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="{{asset "js/app.js"}}"></script>
+    <script>
+            AOS.init();
+            let myAnimation = anime({
+                targets: ".test-animate-img img",
+                translateY: 50,
+                duration: 2000,
+                easing: 'linear',
+                autoplay: true,
+                loop: true,
+                direction: 'alternate'
+            })
+        </script>
+</body>
+</html>

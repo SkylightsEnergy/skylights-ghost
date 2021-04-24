@@ -1,0 +1,219 @@
+{{!< default}}
+
+{{!-- begin navbar --}}
+ <nav class="navbar navbar-expand-lg fixed-top sticky topbar-custom">
+            <div class="container">
+                <ul class="navbar-nav">
+                    <li>
+                        <a href="/">support@skylightsenergy.com</a>
+                    </li>
+                    <li>
+                        <a href="/">+91-9876543210</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li><a class="text-primary" href=""><i class="mdi mdi-facebook f-20"></i></a></li>
+                    <li><a class="text-primary" href=""><i class="mdi mdi-twitter f-20"></i></a></li>
+                    <li><a class="text-primary" href=""><i class="mdi mdi-instagram f-20"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg fixed-top sticky navbar-custom">
+            <div class="container">
+                <a class="navbar-brand logo" href="/">
+                    <img src="{{asset "images/logo/logo1.jpeg"}}" alt="logo" height="40" />
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span>Menu</span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/solutions">Solutions</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/testimonials">Testimonials</a></li>
+                        <li><a href="/blog">Success Stories</a></li>
+                        <li><a href="/resources">Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+{{!-- end navbar --}}
+
+
+
+{{#post}}
+<section class="section pb-5">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-12">
+                <div class="text-center">
+                    <h2 class="text-dark text-capitalize">{{title}}</h2>
+                    <p class="text-muted font-weight-bold">
+                        Posted on: <span class="text-primary">{{date published_at}}</span>&nbsp;/&nbsp; 
+                        Author: <span class="text-primary">{{primary_author.name}}</span>&nbsp;/&nbsp;
+                        Categories: <span class="text-primary">{{primary_tag.name}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3 justify-content-center">
+            <div class="col-lg-8">
+                {{!-- Displays the featured image if exists --}}
+                {{#if feature_image}}
+                    <figure>
+                        <img src="{{img_url feature_image}}" alt="{{title}}" class="img-fluid" />
+                    </figure>
+                {{/if}}
+                <div class="text-justify pt-4">
+                    <p>{{content}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{!-- recent posts --}}
+<section class="section pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-left">
+                    <h3 class="text-dark">Our Recent Posts</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            {{#get "posts" limit="3" as |recent|}}
+                {{#foreach recent}}
+                <div class="col-lg-4">
+                    <div class="blog-box mt-4 bg-white">
+                        {{#if feature_image}}
+                            <img 
+                            src="{{img_url feature_image}}"
+                            class="img-fluid rounded" alt="" />
+                        {{/if}}
+                        <div class="blog-contain p-4">
+                            <div class="blog-user-box bg-white rounded">
+                                <div class="media">
+                                    <div class="blog-user">
+                                        {{#if feature_image}}
+                                        <img
+                                        src="{{img_url feature_image}}"
+                                        class="img-fluid rounded" alt="user" />
+                                        {{/if}}
+                                    </div>
+                                    <div class="media-body ml-3">
+                                        <a class="h5 text-dark font-weight-bold f-13 mb-1" href="{{url}}">{{title}}</a>
+                                        <p class="text-primary f-10 mb-0 font-weight-600"><i class="mdi mdi-calender"></i>{{reading_time}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="mt-4">
+                                <a href="" class="text-dark f-18"
+                                    >{{excerpt characters="100"}}</a
+                                >
+                            </h5>
+                            <div class="mt-4 f-14">
+                                <p class="mb-0">
+                                    <a href="" class="text-dark"
+                                        ><i class="mdi mdi-forum-outline ml-2 text-primary mr-2 f-16"></i>{{reading_time}}</a
+                                    >
+                                    <a href="" class="text-dark ml-4"
+                                        ><i class="mdi mdi-eye-outline ml-2 text-primary mr-2 f-16"></i>{{date published_at timeago="true"}}</a
+                                    >
+                                </p>
+                            </div>
+                            <div class="mt-4">
+                                <a href="{{url}}" class="btn btn-primary btn-sm">Read more <i class="mdi mdi-arrow-right ml-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+</section>
+{{/post}}
+
+{{!-- begin footer --}}
+    <!-- begin footer -->
+        <!-- begin footer -->
+        <footer class="section pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="">
+                            <h6 class="f-17">Solutions</h6>
+                            <ul class="list-unstyled footer-link pl-2">
+                                <li><a href=""><i class="mdi mdi-chevron-right text-primary font-weight-bold"></i>&nbsp;EMS</a></li>
+                                <li><a href=""><i class="mdi mdi-chevron-right text-primary font-weight-bold"></i>&nbsp;BMS</a></li>
+                                <li><a href=""><i class="mdi mdi-chevron-right text-primary font-weight-bold"></i>&nbsp;AIMS</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="">
+                            <h6 class="f-17">About Us</h6>
+                            <ul class="list-unstyled footer-link pl-2">
+                                <li><a href=""><i class="mdi mdi-chevron-right text-primary font-weight-bold"></i>&nbsp;Company</a></li>
+                                <li><a href=""><i class="mdi mdi-chevron-right text-primary font-weight-bold"></i>&nbsp;Meet Our Team</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="">
+                            <h6 class="f-17">Blog</h6>
+                            <ul class="list-unstyled footer-link pl-2">
+                                <li><a href=""><i class="mdi mdi-chevron-right text-primary font-weight-bold"></i>&nbsp;Stories</a></li>
+                                <li><a href=""><i class="mdi mdi-chevron-right text-primary font-weight-bold"></i>&nbsp;Industry Insights</a></li>
+                                <li><a href=""><i class="mdi mdi-chevron-right text-primary font-weight-bold"></i>&nbsp;News</a></li>
+                                <li><a href=""><i class="mdi mdi-chevron-right text-primary font-weight-bold"></i>&nbsp;Videos</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="">
+                            <h6 class="f-17">Reviews</h6>
+                            <ul class="list-unstyled footer-link pl-2">
+                                <li><a href=""><i class="mdi mdi-chevron-right text-primary font-weight-bold"></i>&nbsp;Testimonials</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mt-2 mb-2" />
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="text-center">
+                            <p class="text-muted mb-0">
+                                2021 © <span class="text-primary font-weight-bold">Skylights Energy</span>. Powered by
+                                <span class="text-primary font-weight-bold">Ampcome</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="text-center">
+                            <a class="text-primary font-weight-bold mr-2" href="">support@skylightsenergy.com</a> |
+                            <a class="text-primary font-weight-bold ml-2" href="">+91-9876543210</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="text-center">
+                            <a class="text-primary font-weight-bold mr-3" href=""><i class="mdi mdi-twitter f-17"></i></a>
+                            <a class="text-primary font-weight-bold mr-3" href=""><i class="mdi mdi-facebook f-17"></i></a>
+                            <a class="text-primary font-weight-bold" href=""><i class="mdi mdi-instagram f-17"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+{{!-- begin footer --}}
