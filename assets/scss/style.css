@@ -1050,11 +1050,44 @@ hr {
 }
 .bg-home-6 {
   position: relative;
-  padding: 180px 0px 250px 0px;
-  background-image: url(../images/bg/bg-1.png);
+  padding: 150px 0px 100px 0px;
+  background-image: url("../images/bg/SKYLIGHTS5a.jpg");
+  background-repeat: no-repeat;
   background-position: center center;
+  background-size: cover;
+  -webkit-animation-name: banner;
+          animation-name: banner;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  perspective: 1000;
+  background-attachment: fixed;
 }
 
+@-webkit-keyframes banner {
+  0% {
+    background-image: url("../images/bg/SKYLIGHTS5b.jpg");
+  }
+  50% {
+    background-image: url("../images/bg/SKYLIGHTS5c.jpg");
+  }
+  100% {
+    background-image: url("../images/bg/SKYLIGHTS5d.jpg");
+  }
+}
+
+@keyframes banner {
+  0% {
+    background-image: url("../images/bg/SKYLIGHTS5b.jpg");
+  }
+  50% {
+    background-image: url("../images/bg/SKYLIGHTS5c.jpg");
+  }
+  100% {
+    background-image: url("../images/bg/SKYLIGHTS5d.jpg");
+  }
+}
 .home-text h2 {
   font-size: 67px;
   line-height: 76px;
@@ -1121,7 +1154,7 @@ hr {
 .bg-home-use {
   position: relative;
   padding: 100px 0px 150px 0px;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../images/bg/bg-4.jpeg);
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../images/bg/why3.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
