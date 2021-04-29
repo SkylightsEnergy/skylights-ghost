@@ -58,3 +58,12 @@ $(".test-slider").slick({
 //     autoplaySpeed: 2000
 // })
 // end test slider
+// typed
+$(".element").each(function () {
+    var $this = $(this);
+    $this.typed({
+        strings: $this.attr("data-elements").split(","),
+        typeSpeed: 100, // typing speed
+        backDelay: 3000, // pause before backspacing
+    });
+});
